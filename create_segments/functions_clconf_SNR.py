@@ -2,7 +2,7 @@ from __future__ import print_function
 import numpy as np 
 import sys 
 import h5py 
-from ConfigParser import ConfigParser
+from configparser import ConfigParser #previously configparser was ConfigParser
 import os
 import gwpy 
 import scipy 
@@ -39,6 +39,8 @@ detector   = config.get('conf', 'detector')
 glitchfile = config.get('conf', 'glitchfile')
 segmenfile = config.get('conf', 'segmenfile')
 segmentdir = config.get('conf', 'segmentdir')
+#testplotwww = config.get('testing','testplotwww')
+#testplotdir = config.get('testing','testplotdir')
 
 #check if a file with injection exists
 injfile = 0
@@ -92,8 +94,10 @@ apx = config.get('wf', 'apx')
 f_lower = config.get('wf', 'f_lower')
 
 # limits on the snr of the signal 
-snr_limit_min = float(config.get('wf', 'snr_limit_min')) 
-snr_limit_max = float(config.get('wf', 'snr_limit_max')) 
+#snr_limit_min = float(config.get('wf', 'snr_limit_min')) 
+#snr_limit_max = float(config.get('wf', 'snr_limit_max')) 
+snr_limit_min = float(sys.argv[4])
+snr_limit_max = float(sys.argv[5])
 
 # ranges of masses, spins and distance  
 m1 = [float(x) for x in config.get('wf', 'm1range').split(",")]
@@ -234,13 +238,19 @@ def signal_snr(signal, zoom, psd, gps):
 
 
     sig = TimeSeries(signal, sample_rate=zoom.sample_rate, epoch=(gps + sigshift)).taper()
-    sig.resize(len(zoom))
+    
+    #____________________________CHANGED_______________________________
+    
+    #sig.resize(len(psd))
+    size = 1./sig.dt/psd.df
+    sig.resize(int(size))
 
-    # Signal-to-noise of waveform sig  
-    snr_timed = matched_filter(sig.to_pycbc(), sig.to_pycbc(), 
-                         psd=psd.to_pycbc(), low_frequency_cutoff=highpass)
-
+    #____________________________CHANGED_______________________________
+    
+    # Signal-to-noise of waveform sig
+    snr_timed = matched_filter(sig.to_pycbc(), sig.to_pycbc(),psd=psd.to_pycbc(), low_frequency_cutoff=highpass)
     snr_timed_max = np.max(TimeSeries.from_pycbc(snr_timed).abs())
+    #print('snr_timed_max:',snr_timed_max)
 
     return sig, snr_timed_max, sigshift 
 
@@ -471,7 +481,7 @@ def available_glitches_excluding_injections():
 
     """ 
     Checks for glitches lying in between of at least [duration s] 
-    to adjascent glitches, start or end of segment taking into account
+    to adjacent glitches, start or end of segment taking into account
     also the presence of injections (by excluding segments with injections)
         
     In this version it is assumed that the txt files containing the glitches
@@ -489,8 +499,8 @@ def available_glitches_excluding_injections():
 #            glsnr = np.concatenate((glsnr,glsnr_gspy), axis=None)   
     
 
-#    glgps_all, gldur, glsnr = read_glitch_files()
-    glgps_all, gldur, glsnr = read_glitch_files_gspy(glitch_cat)
+    glgps_all, gldur, glsnr = read_glitch_files()
+#    glgps_all, gldur, glsnr = read_glitch_files_gspy(glitch_cat)
 
     #find elements for which SNR>snr_th
     index_srn = [index for index, value in enumerate(glsnr) if value > snr_th]
@@ -640,7 +650,7 @@ def available_noise_stretches_glitch_duration_excluding_injections():
 
         # iterating from the end of the tuple 
         # to be able to remove elements 
-        for i in xrange(len(be_seg) - 1, -1, -1):
+        for i in range(len(be_seg) - 1, -1, -1): #changer 
 
             # case 1. (glitch i is within the duration of glitch i-1) 
             # b_{i} > b_{i-1} and e_{i} < e_{i-1}
@@ -795,34 +805,29 @@ def output_noise_selection(howmany, add_signal=False):
     
                     # Assuming sorted filename from choose_noise_samples() 
                     if prevfilename == filename[i]:
-                            pass 
+                    	    pass 
 
-                    else:  
+                    else:
                             # load new data 
                             f = h5py.File(segmentdir + filename[i], 'r')
                             hoft = f['Strain']['Whitened_Strain'][()]
-                            
                             df   = f['PSD']['PSD'].attrs['Delta_f']
                             psd  = FrequencySeries(f['PSD']['PSD'][()], df=df)
                             asd  = FrequencySeries(np.sqrt(f['PSD']['PSD'][()]), df=df)
                             f.close()
- 
                             prevfilename = filename[i] 
 
                     h = get_hoft_noise_sample(hoft, segment_start[i], gps[i], duration) 
-
                     # normality test (D'Agostino-Pearson) #-------------------------------------
                     #Test whether a sample differs from a normal distribution.
                     statistic, pvalue = sc.normaltest(h)
                     #the second argument is the 2-sided chi squared probability for the hypothesis test
                     #print("pvalue:",pvalue,i)
                     if (pvalue<pcrit or h.size<int(duration*fs)):
-                            
-                            raise Exception("pvalue<pcrit")
-                            
-                    #case in which a signal nedds to be added        
+                    	raise Exception("pvalue<pcrit")
+                    #case in which a signal needs to be added        
                     if (add_signal):
-                            write_signal(h, fs, gps[i],segment_start[i],psd,asd,outf)
+                    	write_signal(h, fs, gps[i],segment_start[i],psd,asd,outf)
                     
                     #only noise case        
                     if not add_signal:
@@ -840,8 +845,9 @@ def output_noise_selection(howmany, add_signal=False):
                     samples_selected = samples_selected+1            
                     i = i+1 #update the index of the list
 
-            except:
+            except Exception as e:
                     print("\nD'Agostino-Pearson not passed (or size less than expected), extracting a new noise sample")
+                    print(e)
                     #extract a new random gps time and add it to the existing list
                     gps_new, segment_start_new, filename_new = choose_noise_samples(noise_stretches, 1)
                     #use method extend because the output of the previous method consist in lists
@@ -1068,7 +1074,6 @@ def write_signal(h, fs, gps, segment_start, psd,asd,outf):
         """
         method to add the signal to the noise and write it to the output file 
         """
-        
         zoom = TimeSeries(h, sample_rate=fs, epoch=gps)
 
         snr_random_selection = np.random.uniform(snr_limit_min, snr_limit_max, 1)
@@ -1093,7 +1098,7 @@ def write_signal(h, fs, gps, segment_start, psd,asd,outf):
 
         # Inject (add) whiten signal to the background
         bck_plus_sig = zoom.inject(sig_whiten) 
-        print("---> adding signal with SNR",snr_timed_max)
+        #print("---> adding signal with SNR",snr_timed_max)
 
         # Create a hdf5 group for each instance, 
         # containing the time series, signal 
@@ -1112,12 +1117,13 @@ def write_signal(h, fs, gps, segment_start, psd,asd,outf):
                     
         # metadata is: gps segment_start, gps at the beginning of ts, duration [s]
         # signal parameters metadata and the SNR
-        m = np.append(np.array([segment_start, gps, duration/4]), metadata, 0) 
+        m = np.append(np.array([segment_start, gps, duration]), metadata, 0) 
         m = np.append(m, np.array([snr_timed_max]), 0) 
 
         m = np.array(m.flatten(), dtype=np.float)  
 
         met = grp.create_dataset("metadata", data=m)
+        #print('signal added')
 
 
 
