@@ -1,0 +1,95 @@
+Loss on train data: 0.53
+Loss on test data: 0.54
+
+ precision target: 0.9 
+
+              precision    recall  f1-score   support
+
+           0     0.8126    0.9704    0.8845      5000
+           1     0.9590    0.8892    0.9228      5000
+           2     0.9852    0.8656    0.9215      5000
+
+    accuracy                         0.9084     15000
+   macro avg     0.9189    0.9084    0.9096     15000
+weighted avg     0.9189    0.9084    0.9096     15000
+
+
+Loss on train data: 0.54
+Loss on test data: 0.54
+
+ precision target: 0.91 
+
+              precision    recall  f1-score   support
+
+           0     0.8294    0.9780    0.8976      5000
+           1     0.9733    0.8888    0.9291      5000
+           2     0.9817    0.8910    0.9342      5000
+
+    accuracy                         0.9193     15000
+   macro avg     0.9281    0.9193    0.9203     15000
+weighted avg     0.9281    0.9193    0.9203     15000
+
+
+Loss on train data: 0.54
+Loss on test data: 0.54
+
+ precision target: 0.92 
+
+              precision    recall  f1-score   support
+
+           0     0.8384    0.9802    0.9037      5000
+           1     0.9814    0.8848    0.9306      5000
+           2     0.9789    0.9096    0.9430      5000
+
+    accuracy                         0.9249     15000
+   macro avg     0.9329    0.9249    0.9258     15000
+weighted avg     0.9329    0.9249    0.9258     15000
+
+
+Loss on train data: 0.54
+Loss on test data: 0.55
+
+ precision target: 0.93 
+
+              precision    recall  f1-score   support
+
+           0     0.8670    0.9534    0.9082      5000
+           1     0.9514    0.9076    0.9290      5000
+           2     0.9744    0.9222    0.9476      5000
+
+    accuracy                         0.9277     15000
+   macro avg     0.9309    0.9277    0.9282     15000
+weighted avg     0.9309    0.9277    0.9282     15000
+
+
+Loss on train data: 0.56
+Loss on test data: 0.56
+
+ precision target: 0.94 
+
+              precision    recall  f1-score   support
+
+           0     0.8552    0.8956    0.8750      5000
+           1     0.8831    0.9352    0.9084      5000
+           2     0.9839    0.8794    0.9287      5000
+
+    accuracy                         0.9034     15000
+   macro avg     0.9074    0.9034    0.9040     15000
+weighted avg     0.9074    0.9034    0.9040     15000
+
+
+Loss on train data: 0.56
+Loss on test data: 0.56
+
+ precision target: 0.95 
+
+              precision    recall  f1-score   support
+
+           0     0.8360    0.9766    0.9008      5000
+           1     0.9682    0.8842    0.9243      5000
+           2     0.9828    0.9028    0.9411      5000
+
+    accuracy                         0.9212     15000
+   macro avg     0.9290    0.9212    0.9221     15000
+weighted avg     0.9290    0.9212    0.9221     15000
+

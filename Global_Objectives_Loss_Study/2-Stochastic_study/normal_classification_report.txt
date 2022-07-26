@@ -1,0 +1,110 @@
+                         
+
+                			 Loss : RP         
+                Parameter: 0.0002            
+                Loss on train data: 0.15459703412652015   
+                Loss on test data: 0.15893760825693606    
+                                         
+                0.999
+              precision    recall  f1-score   support
+
+           0     0.6845    0.9816    0.8066      5000
+           1     0.9632    0.8684    0.9133      5000
+           2     0.9865    0.6554    0.7876      5000
+
+    accuracy                         0.8351     15000
+   macro avg     0.8780    0.8351    0.8358     15000
+weighted avg     0.8780    0.8351    0.8358     15000
+
+matrix: 
+ [[4908   71   21]
+ [ 634 4342   24]
+ [1628   95 3277]]
+                         
+
+                			 Loss : FPTP         
+                Parameter: 0.0002            
+                Loss on train data: 0.6570407395362854   
+                Loss on test data: 0.6576330717802048    
+                                         
+                0.995
+              precision    recall  f1-score   support
+
+           0     0.6026    0.9932    0.7501      5000
+           1     0.9618    0.7408    0.8370      5000
+           2     0.9917    0.5768    0.7294      5000
+
+    accuracy                         0.7703     15000
+   macro avg     0.8521    0.7703    0.7721     15000
+weighted avg     0.8521    0.7703    0.7721     15000
+
+matrix: 
+ [[4966   24   10]
+ [1282 3704   14]
+ [1993  123 2884]]
+                         
+
+                			 Loss : FPTP         
+                Parameter: 0.0002            
+                Loss on train data: 0.6445515270233154   
+                Loss on test data: 0.6454474046230316    
+                                         
+                0.995
+              precision    recall  f1-score   support
+
+           0     0.6674    0.9574    0.7865      5000
+           1     0.9110    0.8082    0.8565      5000
+           2     0.9623    0.6526    0.7777      5000
+
+    accuracy                         0.8061     15000
+   macro avg     0.8469    0.8061    0.8069     15000
+weighted avg     0.8469    0.8061    0.8069     15000
+
+matrix: 
+ [[4787  149   64]
+ [ 895 4041   64]
+ [1491  246 3263]]
+                         
+
+                			 Loss : FPTP         
+                Parameter: 0.0002            
+                Loss on train data: 0.6991867016553879   
+                Loss on test data: 0.6993390430212021    
+                                         
+                0.995
+              precision    recall  f1-score   support
+
+           0     0.7119    0.7072    0.7095      5000
+           1     0.6834    0.8690    0.7651      5000
+           2     0.9527    0.7002    0.8071      5000
+
+    accuracy                         0.7588     15000
+   macro avg     0.7826    0.7588    0.7606     15000
+weighted avg     0.7826    0.7588    0.7606     15000
+
+matrix: 
+ [[3536 1392   72]
+ [ 553 4345  102]
+ [ 878  621 3501]]
+                         
+
+                			 Loss : FPTP         
+                Parameter: 0.0002            
+                Loss on train data: 0.7029962859153748   
+                Loss on test data: 0.7033748532533646    
+                                         
+                0.995
+              precision    recall  f1-score   support
+
+           0     0.3571    0.1544    0.2156      5000
+           1     0.4337    0.6990    0.5353      5000
+           2     0.8113    0.7756    0.7930      5000
+
+    accuracy                         0.5430     15000
+   macro avg     0.5340    0.5430    0.5146     15000
+weighted avg     0.5340    0.5430    0.5146     15000
+
+matrix: 
+ [[ 772 3853  375]
+ [ 978 3495  527]
+ [ 412  710 3878]]

@@ -1,0 +1,40 @@
+                         
+
+                			 Loss : CCE         
+                Parameter: 0.0002            
+                Loss on train data: [0.00810550090658944, 0.99920017]   
+                Loss on test data: [0.06830202314065537, 0.9351433]    
+                                         
+                None
+              precision    recall  f1-score   support
+
+           0     0.9959    0.9656    0.9805     10000
+           1     0.9351    0.9920    0.9627      5000
+
+    accuracy                         0.9744     15000
+   macro avg     0.9655    0.9788    0.9716     15000
+weighted avg     0.9756    0.9744    0.9746     15000
+
+matrix: 
+ [[9656  344]
+ [  40 4960]]
+                         
+
+                			 Loss : TPFP         
+                Parameter: 0.0002            
+                Loss on train data: [0.519679627776146, 0.91230965]   
+                Loss on test data: [0.5353344522714615, 0.83853024]    
+                                         
+                0.0001
+              precision    recall  f1-score   support
+
+           0     0.9972    0.9042    0.9484     10000
+           1     0.8385    0.9950    0.9101      5000
+
+    accuracy                         0.9345     15000
+   macro avg     0.9179    0.9496    0.9293     15000
+weighted avg     0.9443    0.9345    0.9357     15000
+
+matrix: 
+ [[9042  958]
+ [  25 4975]]

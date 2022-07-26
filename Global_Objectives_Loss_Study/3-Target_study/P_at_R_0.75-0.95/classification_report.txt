@@ -1,0 +1,191 @@
+RECALL_TARGET: 0.7
+
+                Loss on train data: 0.5171126508712769
+                Loss on test data: 0.5240083203315735
+
+              precision    recall  f1-score   support
+
+           0     0.8427    0.9578    0.8966      5000
+           1     0.9544    0.9080    0.9306      5000
+           2     0.9809    0.8946    0.9358      5000
+
+    accuracy                         0.9201     15000
+   macro avg     0.9260    0.9201    0.9210     15000
+weighted avg     0.9260    0.9201    0.9210     15000
+
+
+RECALL_TARGET: 0.75
+        
+                Loss on train data: 0.5466426795721054   
+                Loss on test data: 0.5496714392900467    
+                                         
+              precision    recall  f1-score   support
+
+           0     0.7449    0.9836    0.8478      5000
+           1     0.9737    0.8796    0.9242      5000
+           2     0.9892    0.7678    0.8645      5000
+
+    accuracy                         0.8770     15000
+   macro avg     0.9026    0.8770    0.8789     15000
+weighted avg     0.9026    0.8770    0.8789     15000
+
+
+RECALL_TARGET: 0.80
+        
+                Loss on train data: 0.5581549534797668   
+                Loss on test data: 0.5611145197153091    
+                                         
+              precision    recall  f1-score   support
+
+           0     0.7781    0.9320    0.8481      5000
+           1     0.9070    0.9290    0.9179      5000
+           2     0.9887    0.7692    0.8652      5000
+
+    accuracy                         0.8767     15000
+   macro avg     0.8913    0.8767    0.8771     15000
+weighted avg     0.8913    0.8767    0.8771     15000
+
+                         
+RECALL_TARGET: 0.85
+         
+                Loss on train data: 0.5565984584093094   
+                Loss on test data: 0.5622775950431824    
+                                         
+              precision    recall  f1-score   support
+
+           0     0.8273    0.9476    0.8834      5000
+           1     0.9349    0.9076    0.9210      5000
+           2     0.9842    0.8698    0.9235      5000
+
+    accuracy                         0.9083     15000
+   macro avg     0.9155    0.9083    0.9093     15000
+weighted avg     0.9155    0.9083    0.9093     15000
+
+                         
+RECALL_TARGET: 0.87
+
+                Loss on train data: 0.5594701203107834   
+                Loss on test data: 0.5650631557703019   
+
+              precision    recall  f1-score   support
+
+           0     0.8342    0.9538    0.8900      5000
+           1     0.9461    0.9022    0.9236      5000
+           2     0.9805    0.8854    0.9305      5000
+
+    accuracy                         0.9138     15000
+   macro avg     0.9203    0.9138    0.9147     15000
+weighted avg     0.9203    0.9138    0.9147     15000
+
+                         
+RECALL_TARGET: 0.88
+       
+                Loss on train data: 0.5602300930023193   
+                Loss on test data: 0.5652524013519287    
+
+              precision    recall  f1-score   support
+
+           0     0.8344    0.9728    0.8983      5000
+           1     0.9677    0.8978    0.9314      5000
+           2     0.9837    0.8916    0.9354      5000
+
+    accuracy                         0.9207     15000
+   macro avg     0.9286    0.9207    0.9217     15000
+weighted avg     0.9286    0.9207    0.9217     15000
+
+
+RECALL_TARGET: 0.89   
+
+                Loss on train data: 0.5715959659814834   
+                Loss on test data: 0.5753295679092407    
+
+              precision    recall  f1-score   support
+
+           0     0.7766    0.9870    0.8692      5000
+           1     0.9872    0.8514    0.9143      5000
+           2     0.9841    0.8528    0.9137      5000
+
+    accuracy                         0.8971     15000
+   macro avg     0.9160    0.8971    0.8991     15000
+weighted avg     0.9160    0.8971    0.8991     15000
+         
+      
+RECALL_TARGET: 0.90 (first one)
+           
+                Loss on train data: 0.5694559371471405   
+                Loss on test data: 0.5746076292991639    
+                                         
+              precision    recall  f1-score   support
+
+           0     0.7978    0.9866    0.8822      5000
+           1     0.9799    0.8680    0.9206      5000
+           2     0.9859    0.8652    0.9216      5000
+
+    accuracy                         0.9066     15000
+   macro avg     0.9212    0.9066    0.9081     15000
+weighted avg     0.9212    0.9066    0.9081     15000
+
+                         
+RECALL_TARGET: 0.90 (second one)   
+    
+                Loss on train data: 0.5647626798152924   
+                Loss on test data: 0.5701357424259186    
+
+              precision    recall  f1-score   support
+
+           0     0.8332    0.9692    0.8961      5000
+           1     0.9653    0.8956    0.9291      5000
+           2     0.9837    0.8942    0.9368      5000
+
+    accuracy                         0.9197     15000
+   macro avg     0.9274    0.9197    0.9207     15000
+weighted avg     0.9274    0.9197    0.9207     15000
+
+                         
+RECALL_TARGET: 0.91
+
+                Loss on train data: 0.5715006101131439   
+                Loss on test data: 0.5757298693656921    
+
+              precision    recall  f1-score   support
+
+           0     0.8169    0.9646    0.8846      5000
+           1     0.9552    0.9034    0.9286      5000
+           2     0.9847    0.8600    0.9181      5000
+
+    accuracy                         0.9093     15000
+   macro avg     0.9189    0.9093    0.9104     15000
+weighted avg     0.9189    0.9093    0.9104     15000
+
+                         
+RECALL_TARGET: 0.92
+   
+                Loss on train data: 0.5689005702733994   
+                Loss on test data: 0.5747121376991272    
+
+              precision    recall  f1-score   support
+
+           0     0.8279    0.9768    0.8962      5000
+           1     0.9803    0.8644    0.9187      5000
+           2     0.9791    0.9188    0.9480      5000
+
+    accuracy                         0.9200     15000
+   macro avg     0.9291    0.9200    0.9210     15000
+weighted avg     0.9291    0.9200    0.9210     15000
+
+                         
+RECALL_TARGET: 0.95
+          
+                Loss on train data: 0.5815249832868576   
+                Loss on test data: 0.5863893545866012    
+                                         
+              precision    recall  f1-score   support
+
+           0     0.8125    0.9680    0.8835      5000
+           1     0.9512    0.8854    0.9171      5000
+           2     0.9859    0.8654    0.9217      5000
+
+    accuracy                         0.9063     15000
+   macro avg     0.9165    0.9063    0.9074     15000
+weighted avg     0.9165    0.9063    0.9074     15000
+

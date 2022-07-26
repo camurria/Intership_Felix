@@ -1,0 +1,94 @@
+Study of the dependency of the ROC loss function with respect to the Learning Rate.
+The LR varies from 0.00005 to 0.0004, with steps of 0.0001 (expect for the first step).
+The evolution is also plotted in the Evolution.xlsx Excel table.
+
+Hyperparameters : Epochs=50 ; Loss function=ROC_AUC (so no target)
+
+			 Loss : ROC -- Parameter: 5e-05 
+Loss on train data: 0.08208584424853325 
+Loss on test data
+
+ precision target: None 
+
+              precision    recall  f1-score   support
+
+           0     0.8161    0.9604    0.8824      5000
+           1     0.9465    0.8700    0.9066      5000
+           2     0.9741    0.8806    0.9250      5000
+
+    accuracy                         0.9037     15000
+   macro avg     0.9122    0.9037    0.9047     15000
+weighted avg     0.9122    0.9037    0.9047     15000
+
+
+
+			 Loss : ROC -- Parameter: 0.0001 
+Loss on train data: 0.07999413353204728 
+Loss on test data
+
+ precision target: None 
+
+              precision    recall  f1-score   support
+
+           0     0.8413    0.9160    0.8771      5000
+           1     0.9027    0.9314    0.9168      5000
+           2     0.9841    0.8654    0.9209      5000
+
+    accuracy                         0.9043     15000
+   macro avg     0.9094    0.9043    0.9049     15000
+weighted avg     0.9094    0.9043    0.9049     15000
+
+
+
+			 Loss : ROC -- Parameter: 0.0002 
+Loss on train data: 0.07649094581604005 
+Loss on test data
+
+ precision target: None 
+
+              precision    recall  f1-score   support
+
+           0     0.8581    0.9638    0.9079      5000
+           1     0.9580    0.9068    0.9317      5000
+           2     0.9809    0.9124    0.9454      5000
+
+    accuracy                         0.9277     15000
+   macro avg     0.9323    0.9277    0.9283     15000
+weighted avg     0.9323    0.9277    0.9283     15000
+
+
+
+			 Loss : ROC -- Parameter: 0.0003 
+Loss on train data: 0.07763917270302773 
+Loss on test data
+
+ precision target: None 
+
+              precision    recall  f1-score   support
+
+           0     0.8354    0.9610    0.8938      5000
+           1     0.9565    0.9112    0.9333      5000
+           2     0.9839    0.8826    0.9305      5000
+
+    accuracy                         0.9183     15000
+   macro avg     0.9253    0.9183    0.9192     15000
+weighted avg     0.9253    0.9183    0.9192     15000
+
+
+
+			 Loss : ROC -- Parameter: 0.0004 
+Loss on train data: 0.08179696986079216 
+Loss on test data
+
+ precision target: None 
+
+              precision    recall  f1-score   support
+
+           0     0.7738    0.9768    0.8635      5000
+           1     0.9683    0.8728    0.9181      5000
+           2     0.9873    0.8256    0.8992      5000
+
+    accuracy                         0.8917     15000
+   macro avg     0.9098    0.8917    0.8936     15000
+weighted avg     0.9098    0.8917    0.8936     15000
+
